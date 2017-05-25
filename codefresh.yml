@@ -11,6 +11,6 @@ steps:
     on_finish: # Execute in any case
       metadata: # Declare the metadata attribute
         set: # Specify the set operation
-          - ${{build_step.imageId}}: # Select any number of target images
+          - ${{build.imageId}}: # Select any number of target images
             - is_main: 
                 evaluate: "'main' == 'main'"
