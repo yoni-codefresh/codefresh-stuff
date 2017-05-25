@@ -8,6 +8,6 @@ steps:
   whatever:
     image: alpine
     environment:
-      - IMAGE_ID="${{build.imageId}}"
+      - IMAGE_ID=${{build.imageId}}
     commands:
       - env
