@@ -4,6 +4,13 @@ steps:
   build:
     type: build
     image_name: some/name
-    metadata:
-      set:
-        - dockerImageId: ${{build.imageId}}
+  freestyle:
+    image: alpine
+    commands:
+      - echo hello
+    on_finish: # Execute in any case
+      metadata: # Declare the metadata attribute
+        set: # Specify the set operation
+          - ${{build_step.imageId}}: # Select any number of target images
+            - is_main: 
+                evaluate: "'main' == 'main'"
