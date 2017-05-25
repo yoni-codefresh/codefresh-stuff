@@ -8,4 +8,4 @@ steps:
   whatever:
     image: alpine
     commands:
-      - echo ${{build.imageId}}
+      - echo "${{build.imageId}}"
