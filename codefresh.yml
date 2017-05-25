@@ -7,5 +7,7 @@ steps:
     
   whatever:
     image: alpine
+    environment:
+      - IMAGE_ID: ${{build.imageId}}
     commands:
-      - echo "${{build.imageId}}"
+      - env
