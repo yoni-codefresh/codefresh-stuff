@@ -4,13 +4,5 @@ steps:
   build:
     type: build
     image_name: some/name
-  freestyle:
-    image: alpine
-    commands:
-      - echo hello
-    on_finish: # Execute in any case
-      metadata: # Declare the metadata attribute
-        set: # Specify the set operation
-          - ${{build.imageId}}: # Select any number of target images
-            - is_main: 
-                evaluate: "'main' == 'main'"
+    build_arguments:
+      - TEST=before=after
